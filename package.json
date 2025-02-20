@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://{YOUR_GITHUB_USERNAME}.github.io/{REPO_NAME}",
+  "homepage": "https://div0982.github.io/div0982-commentguard-ai",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

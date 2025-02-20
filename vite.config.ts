@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: mode === 'production' ? '/{REPO_NAME}/' : '/',
+  base: mode === 'production' ? '/div0982-commentguard-ai/' : '/',
   build: {
     sourcemap: true,
   },

@@ -23,6 +23,9 @@ export default defineConfig(({ mode }) => ({
   base: '/div0982-commentguard-ai/',
   build: {
     sourcemap: true,
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],

@@ -6,8 +6,8 @@
   "homepage": "https://div0982.github.io/div0982-commentguard-ai",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
+    "build": "tsc && vite build",
+    "build:dev": "tsc && vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",

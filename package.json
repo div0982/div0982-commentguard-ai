@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://div0982.github.io/div0982-commentguard-ai",
+  "homepage": "https://div0982.github.io/div0982-commentguard-ai/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

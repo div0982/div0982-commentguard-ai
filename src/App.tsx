@@ -14,6 +14,7 @@ import InstagramCallback from "./pages/auth/instagram/callback";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import DataDeletion from "./pages/DataDeletion";
+import { PolicyButton } from "./components/PolicyButton";
 
 // Initialize Sentry
 initSentry();
@@ -50,6 +51,7 @@ const App = () => {
                 <Route path="/data-deletion" element={<DataDeletion />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
+              <PolicyButton />
             </BrowserRouter>
           </TooltipProvider>
         </QueryClientProvider>

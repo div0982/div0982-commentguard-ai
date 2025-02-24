@@ -1,7 +1,32 @@
 import { Helmet } from 'react-helmet-async';
 import { PolicyLayout } from '@/components/PolicyLayout';
+import { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export default function DataDeletion() {
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get('id');
+  const signed_request = searchParams.get('signed_request');
+
+  useEffect(() => {
+    // If this is a Facebook verification request
+    if (signed_request) {
+      // Return the expected JSON response
+      const response = {
+        url: `https://div0982.github.io/div0982-commentguard-ai/data-deletion?id=${id}`,
+        confirmation_code: id || 'confirmed'
+      };
+
+      // Set the response as a JSON string in a data attribute
+      document.body.setAttribute('data-response', JSON.stringify(response));
+      
+      // Also write it to the page for Facebook's crawler
+      const responseElement = document.createElement('pre');
+      responseElement.textContent = JSON.stringify(response, null, 2);
+      document.body.appendChild(responseElement);
+    }
+  }, [signed_request, id]);
+
   return (
     <PolicyLayout>
       <div className="container mx-auto px-4 py-8 max-w-4xl pt-20">

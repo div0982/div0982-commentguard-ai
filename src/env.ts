@@ -1,2 +1,9 @@
-export const VITE_GEMINI_API_KEY = 'AIzaSyDHybZclQIJtjjocLjpr4C624BaMuiJNAU';
-export const VITE_OPENROUTER_API_KEY = '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'; 
+export const VITE_GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+export const VITE_OPENROUTER_API_KEY = import.meta.env.VITE_OPENROUTER_API_KEY;
+
+if (!VITE_GEMINI_API_KEY || !VITE_OPENROUTER_API_KEY) {
+  console.error('Missing required environment variables:',
+    !VITE_GEMINI_API_KEY ? 'VITE_GEMINI_API_KEY' : '',
+    !VITE_OPENROUTER_API_KEY ? 'VITE_OPENROUTER_API_KEY' : ''
+  );
+}

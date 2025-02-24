@@ -2,9 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
-
-  workflow_dispatch:
+    branches:
+      - main # or your default branch
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -40,7 +39,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          NODE_ENV: production
+          VITE_INSTAGRAM_CLIENT_ID: ${{ secrets.VITE_INSTAGRAM_CLIENT_ID }}
+          VITE_INSTAGRAM_CLIENT_SECRET: ${{ secrets.VITE_INSTAGRAM_CLIENT_SECRET }}
 
       - name: Debug build output
         run: |
